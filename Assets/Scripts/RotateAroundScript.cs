@@ -21,6 +21,7 @@ public class RotateAround : MonoBehaviour
     {
         // 1. Rotate the offset vector around Z-axis using quaternion
         Quaternion rotation = Quaternion.AngleAxis(rotationSpeed * Time.deltaTime, Vector3.forward);
+
         offset = rotation * offset;
 
         // 2. Update the object's position based on rotated offset
