@@ -16,8 +16,8 @@ public class PlayerScript : MonoBehaviour
     
     private void Update()
     {
-        Direction.x = Input.GetAxis("Horizontal");
-        Direction.y = Input.GetAxis("Vertical");
+        Direction.x = Input.GetAxisRaw("Horizontal");
+        Direction.y = Input.GetAxisRaw("Vertical");
 
         Direction = Direction.normalized;
 
