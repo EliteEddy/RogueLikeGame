@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     
     private void Start()
     {
-
+        
     }
 
     
@@ -21,7 +21,8 @@ public class PlayerScript : MonoBehaviour
 
         Direction = Direction.normalized;
 
-        transform.position += Direction * Time.deltaTime * MoveSpeedAmplifier; 
+        transform.position += Direction * Time.deltaTime * MoveSpeedAmplifier;
+
     }
 
 
