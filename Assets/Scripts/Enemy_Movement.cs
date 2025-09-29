@@ -1,19 +1,30 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
+
 public class Enemy_Movement : MonoBehaviour
 {
-    public float speed;
-    public Rigidbody2D rb;
-    public Transform player;
+    [SerializeField] private float speed = 2f;
+    private Rigidbody2D rb;
+    private Transform player;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();  
+        rb = GetComponent<Rigidbody2D>();
+
+        // Find Player by tag
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
+        if (player == null) return;
+
         Vector2 direction = (player.position - transform.position).normalized;
         rb.linearVelocity = direction * speed;
     }
